@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Hello, world!"); // '!' means we're calling a macro
 }
