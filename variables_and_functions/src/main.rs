@@ -15,6 +15,7 @@ fn main() {
     println!("{t}{f}{c}");
 
     compound_types();
+    function_with_params(5);
 }
 
 fn compound_types() {
@@ -28,4 +29,18 @@ fn compound_types() {
     let array: [i32; 4] = [1, 2, 3, 4];
     let array_b = [3; 5]; // [3, 3, 3, 3, 3]
     println!("{}, {}", array[0], array_b[4]); // 1, 3
+    println!("{}", five());
+}
+
+fn function_with_params(x: i32) {
+    println!("{x}");
+}
+
+/* 
+* - *Statements* are instructions that perform some action and do not return a value
+* - *Expressions* evaluate to a resultant value
+*/
+
+fn five() -> i32 {
+    5
 }
