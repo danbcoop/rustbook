@@ -26,6 +26,9 @@ fn main() {
 
     /* 
     * References
+    * - At any given time, you can have either immutable references of exactly one mutable
+    * reference
+    * - References must be valid
     */
 
     // Using a reference, we can access s1 without taking ownership
@@ -36,12 +39,26 @@ fn main() {
     let reference_to_nothing = dangle();
 }
 
+// Borrowing s
 fn calculate_length(s: &String) -> usize {
     s.len()
 }
 
-fn dangle() -> &String {
+fn no_dangle() -> String {
     let s = String::from("hello");
 
-    &s
+    s
+}
+
+// Resturn String slice of the first word
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+
+    &s[..]
 }

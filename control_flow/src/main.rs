@@ -20,10 +20,8 @@ fn main() {
     }
 
     // For loops are not only safer but can also be more efficient
-    index = 0;
-    for element in a {
+    for (index, element) in a.iter().enumerate() {
         println!("a[{index}] = {element}");
-        index += 1;
     }
 
     for num in (1..4).rev() {
